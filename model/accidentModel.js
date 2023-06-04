@@ -39,11 +39,12 @@ const accidentSchema=new mongoose.Schema({
             required: true
         }
     }],
+
     
-});
+},{timestamps:true});
 
 // adding a 2dsphere index to the location field for geospatial queries
 
 accidentSchema.index({location: '2dsphere'});
-
-module.exports=mongoose.model('accidents',accidentSchema);
+const Accident=mongoose.model('accidents',accidentSchema);
+module.exports= Accident;

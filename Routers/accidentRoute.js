@@ -1,6 +1,8 @@
-const express = require("express");
+const express = require('express');
+const addAccident = require('../controllers/accidentController');
 const router = express.Router();
-const Accident = require("../Models/accidents");
 
-router.route("/accidents").get((req, res) => {
-});
+
+router.post('/Accidents', addAccident);
+
+module.exports = router;
